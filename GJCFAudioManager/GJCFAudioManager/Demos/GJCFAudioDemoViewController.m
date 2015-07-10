@@ -44,18 +44,14 @@
     // Do any additional setup after loading the view.
     
     self.audioManager = [[GJCFAudioManager alloc]init];
-    self.audioManager.recordDelegate = self;
-    self.audioManager.playerDelegate = self;
+//    self.audioManager.recordDelegate = self;
+//    self.audioManager.playerDelegate = self;
     
     UIButton *recordBtn = [TVGDebugQuickUI buttonAddOnView:self.view title:@"录制" target:self selector:@selector(recordNow)];
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressRecord:)];
     [recordBtn addGestureRecognizer:longPress];
     recordBtn.gjcf_top = 88;
     recordBtn.gjcf_left = 0;
-    
-    UIButton *loginBtn = [TVGDebugQuickUI buttonAddOnView:self.view title:@"登录" target:self selector:@selector(loginNow)];
-    loginBtn.gjcf_top = 170;
-    loginBtn.gjcf_left = 0;
     
     UIButton *pauseBtn = [TVGDebugQuickUI buttonAddOnView:self.view title:@"暂停播放" target:self selector:@selector(pause)];
     pauseBtn.gjcf_top = 250;
